@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.EditText;
@@ -41,10 +42,12 @@ public class MainActivity extends Activity {
     }
 
     private class AndroidBridge {
+    	
+    	@JavascriptInterface
     	public void setMessage(final String arg) {
     		handler.post(new Runnable() {
 		    	public void run() {
-		    		mTextView.setText("¹ŞÀº ¸Ş½ÃÁö : \n" + arg);
+		    		mTextView.setText("ë°›ì€ ë©”ì‹œì§€ : \n" + arg);
 		    	}
     		});
     	}
